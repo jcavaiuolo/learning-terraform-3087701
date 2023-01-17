@@ -17,7 +17,7 @@ data "aws_ami" "app_ami" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.app_ami.id
   instance_type = "t3.nano"
-  vpc_security_group_ids = "vpc-0ef446ee209e8db05"
+  vpc_id = "vpc-0ef446ee209e8db05"
 
   tags = {
     Name = "HelloWorld"
